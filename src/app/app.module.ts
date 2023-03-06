@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
 import { TreeComponent } from './tree.component';
-import { SchoolComponent } from './school/school.component';
+import { CourseService } from './courses.service';
+import { AuthorComponent } from './author.component';
+import { AuthorService } from './author.service';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,14 @@ import { SchoolComponent } from './school/school.component';
     CoursesComponent,
     CourseComponent,
     TreeComponent,
-    SchoolComponent
+    AuthorComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [CourseService,
+    AuthorService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

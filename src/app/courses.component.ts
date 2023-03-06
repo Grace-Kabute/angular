@@ -1,5 +1,6 @@
 //step one, create the component
 import {Component} from '@angular/core';
+import { CourseService } from './courses.service';
 //below is a declarator function. it takes in an object as an aurgument.
 @Component({
   selector: 'courses',
@@ -20,5 +21,8 @@ export class CoursesComponent{
   getTitle(){
     return this.title
   }
-  courses=[ 'course1','course','course3']
+  courses:any;
+  constructor(service: CourseService){
+    this.courses=service.getCourse()
+  }
 }
